@@ -53,4 +53,18 @@ Crime_Data_from_2020_to_Present |>
 
 ```
 ##Final Project Report 
+Introduction: 
+describe the research question and main hypothesis; describe why it is important. (1-2 paragraphs) (2pts)
+
+ Introudction:  
+    For my final project I decided to research Crime in the Los Angeles area, my specific question being around the vicitms of crime. In my research I was looking for the answer to. my question of what age groups in the Los Angeles area are most impacted by crime. My hypothesis was that those who were in their 60-80's would be the ones who were most at stake for being victims of crime in the area. This is an imporatnt topic because Los Angeles is one of the most populat cities in the United States and that popularity isn't always sunshine and rainbows, understanding who the targets of crime are will help us get an understanding of what areas need more policing, what groups need more advocates, and allow us to come up with a plan in order to stop the crime from occuring in the future. The reason my hypohtesis says that people ages 60 and up would be easier to target is because this is a vulernable group that unlike children does not have anyone to watch over there and physcially have a harder time doing things making it easier for them to fall victims of this. 
+
+Data: 
+    In collecting my data I used data from the LAPD that took a look at crimes in 2020 all over LA. These crimes ragned from robbery all the way to murder. This data also included information such as specific locations in LA where crimes were being committed, gender, and so much more. But for my data I cofused on the 
+Results: 
+
+Conclusion: 
+Data section: 2-3 paragraphs + plot visualizing main outcome of interest. (3pts)
+Results section: plot of main analysis + regression output + 2-3 paragraphs of description and interpretation of the plots and regression (including interpreting the main coefficient of interest and describing if it is statistically significant and if we should interpret it causally). This section could be longer if you choose to include additional analyses. (8pts)
+Conclusion section: 1 paragraph (i) summarizing results and assessing the extent to which you find support for your hypothesis; (ii) describing limitations of the analysis and threats to inference (missing data, confounding, etc), and stating how you could improve your analysis if you had more time/money. (2pts)
       
