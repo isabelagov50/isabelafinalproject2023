@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
 author: "Isabela Gonzalez-Lawand"
-description: "My final project"
+description: "Understanding which ages are most impacted by crime in LA area"
 output:
   distill::distill_article:
     self_contained: false
@@ -56,12 +56,40 @@ Crime_Data_from_2020_to_Present |>
 Introduction: 
 describe the research question and main hypothesis; describe why it is important. (1-2 paragraphs) (2pts)
 
- Introudction:  
-    For my final project I decided to research Crime in the Los Angeles area, my specific question being around the vicitms of crime. In my research I was looking for the answer to. my question of what age groups in the Los Angeles area are most impacted by crime. My hypothesis was that those who were in their 60-80's would be the ones who were most at stake for being victims of crime in the area. This is an imporatnt topic because Los Angeles is one of the most populat cities in the United States and that popularity isn't always sunshine and rainbows, understanding who the targets of crime are will help us get an understanding of what areas need more policing, what groups need more advocates, and allow us to come up with a plan in order to stop the crime from occuring in the future. The reason my hypohtesis says that people ages 60 and up would be easier to target is because this is a vulernable group that unlike children does not have anyone to watch over there and physcially have a harder time doing things making it easier for them to fall victims of this. 
+ Introuduction: 
+    For my final project I decided to research Crime in the Los Angeles area, my specific question being around the vicitms of crime. In my research I was looking for the answer to. my question of what age groups in the Los Angeles area are most impacted by crime and if the age changes based on gender. My hypothesis was that those who were in their 60-80's who were women would be the ones who were most at stake for being victims of crime in the area. This is an imporatnt topic because Los Angeles is one of the most populat cities in the United States and that popularity isn't always sunshine and rainbows, understanding who the targets of crime are will help us get an understanding of what areas need more policing, what groups need more advocates, and allow us to come up with a plan in order to stop the crime from occuring in the future. The reason my hypohtesis says that people ages 60 and up would be easier to target is because this is a vulernable group that unlike children does not have anyone to watch over there and physcially have a harder time doing things making it easier for them to fall victims of this. Gender is important to understand and the role it plays because we live in a society where women are constantly under attack so when you put an older woman in LA I predicted that this particular group would be at higher risk than any other group. 
 
 Data: 
-    In collecting my data I used data from the LAPD that took a look at crimes in 2020 all over LA. These crimes ragned from robbery all the way to murder. This data also included information such as specific locations in LA where crimes were being committed, gender, and so much more. But for my data I cofused on the 
+##Graph 1
+```{r}
+library(tidyverse)
+Crime_Data_from_2020_to_Present |>
+    count(V12, V13) |>
+  ggplot(aes(x = V13, y = n , fill = V12)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Crime in Los Angeles",
+       x = "Sex of Victim",
+       y = "Number of Victims")
+```
+    In collecting my data I used data from the LAPD that took a look at crimes in 2020 all over LA. These crimes ragned from robbery all the way to murder. This data also included information such as specific locations in LA where crimes were being committed, gender, and so much more. But for my data I focused on the ages of the victims from younger than 1 to as old as 90 years old and focused on the gender of the victims (some of which identified as X whihc is niether male nor female and in some cases meant that the victim was unidentifiable). In my first graph I made a bar plot in this plot we see there range of data and we see a bell curve being formed with each of the colors representing a different age and we also see that there are two bell curves that are being made one of them over the letter F (female victims) and one of them over the letter M (male victims). Taking a closer look at the data I began to realize that there was a matter amoung both and that was that we see the increase in numbers for victims when they are around the age of 30-55. This came as a shock to me because I was expecting there to be a larger curve for ages 60-80. When thinking more about who lives in the LA area I started to think that maybe the reason that the curve is at a younger point is because this area is mostly made of up of people 20-50ish. 
+      I wanted to ensure that the way I was thinking about this was correct so I wanted to put my data in and make a scatter plot where I could take a look at where most of the dots would land for both genders. And we see in the second graph how there is this cluster of all ages and out outliars are actually those in orange some of which were over the age of 100 and others which were under the age of 1. This is telling us that children under the age of 1 are not common victims of crime in LA they are a population that is looked after more, who have parents that are taking care of them around the clock, so this population being an outliar is not suprising. Taking a look at our second group of outliars which showed to be people older than 90 it is show casing that this overall is still a vulernable group but specifically when it comes to being victims of crime in LA this is not a target group for criminals. On the other hand this graph also showed that younger groups such as those in their late 20's to 30's and those in their early to late 50's were victims are higher rates with more of them being victims of crtime than any other group. 
+      One of the most important things to understand about both of thrse graphs is that gender was not something that played a larger role or demonstrated a visiual difference in numbers. On average it seems that men and women both had more crimes depending on their age rather than their gencder. For exmaple in both graphs we see about the same amount of green and blue with no gender having more than the other. This is important because it showcases that there was a part of our data that wasn't making the impact that we orginally thought it would. Now, this is not to say that women or men do not have a difference in thr amount of violence committed towards each group but in this sepcifc study it shows that criminals during 2020 cardd more about the age of the person rather than the gender. 
+      
+      
 Results: 
+##Graph 2
+```{r}
+library(tidyverse)
+Crime_Data_from_2020_to_Present |>
+  count(V12, V13) |>
+  ggplot(aes(x = V13, y = n, color = factor(V12))) +
+  geom_point() +
+  labs(title = "Crime in Los Angeles",
+       x = "Age of Victim",
+       y = "Number of Victims",
+       color = "Victims Age by Color") 
+
+```
 
 Conclusion: 
 Data section: 2-3 paragraphs + plot visualizing main outcome of interest. (3pts)
