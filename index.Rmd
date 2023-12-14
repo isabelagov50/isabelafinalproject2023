@@ -1,6 +1,6 @@
 ---
 title: "Gov 50 Final Project"
-author: "Your Name Here"
+author: "Isabela Gonzalez-Lawand"
 description: "My final project"
 output:
   distill::distill_article:
@@ -10,5 +10,47 @@ output:
 
 
 ## Project thoughts
+Milestone 1 
+ - I am interested in exploring data related to the way different genders votes in national elections compared to local elections. 
 
-I am interested in exploring data related to...
+Update: Project will now be about Crime in LA and the relationship between age and sex of victims. 
+
+## Project thoughts 
+Project MILESTONE 2 
+
+The data set I am taking a look at is Crime Data in Los Angles from 2020 to present day. In looking over this data I have come up with the question of, does the specific area in Los Angles impact the amount of crime/crime rate that is reported. So for example is the crime rate in Central higher than it is in West Valley or Hollywood. I hypothesis that the areas of Los Angles that are more populated such as Central LA that cover areas such as LAX will report higher rates of crime also considering that Central LA covers the large portion of cities in LA compared to smaller towns/areas such as West Valley. I hypothesize this because generally larger cities have higher crime rates overall in the Unites States compared to smaller/less populated areas across the country. My sample takes a look at every crime reported from the year 2020 to 2023 in the Los Angles are, including the type of crime committed, and where the crime was committed. My explanatory variable is V6 which showcases where the crime was committed and in looking at this I can also filter the data to organize how many crimes were committed in that area. Another area of interest that could be analyzes is variable V10 that describes the type of crimes that were committed and analyzing the relationship between the types of crimes committed and the area in which the crimes were committed and analyze if there's a relationship there. The outcome variable is the crime and the number of crime that is committed in a particular area. In the data I was able to form my hypothesis because there was a large number of data recorded for Central LA that has more violent crimes reported than the number of crimes reported in areas such as West Valley LA. 
+
+Project update: Most victims despite being male or female seem to be between the ages of 30-45 and the outliars of crime seem to land amoungs younger ages especially in children and infants as well as the elderly so people in the ages of 60 and older. 
+
+Project Update: Making a bar plot seemed more approriate and while there was a lot more data than maybe was needed we were able to showcase the entirety of the data 
+
+## Project Thoughts Milestone 3 
+```{r}
+library(tidyverse)
+Crime_Data_from_2020_to_Present |>
+    count(V12, V13) |>
+  ggplot(aes(x = V13, y = n , fill = V12)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Crime in Los Angeles",
+       x = "Sex of Victim",
+       y = "Number of Victims")
+```
+
+
+##Project Milesetone 4
+```{r}
+library(tidyverse)
+Crime_Data_from_2020_to_Present |>
+  count(V12, V13) |>
+  ggplot(aes(x = V13, y = n, color = factor(V12))) +
+  geom_point() +
+  labs(title = "Crime in Los Angeles",
+       x = "Age of Victim",
+       y = "Number of Victims",
+       color = "Victims Age by Color") 
+
+
+
+```
+
+      
